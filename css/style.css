@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+/*declara variáveis no css*/
+:root {
+    --color-primary: #06C;
+    --color-secondary: #000;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+img {
+    max-width: 100%;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+#cabecalho {
+    background-color: var(--color-secondary);
+    margin-bottom: 20px;
+    position: sticky;
+    z-index: 1;
+}
+#cabecalho #logo {
+    width: 30px;
+} 
+#cabecalho .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#cabecalho #menu ul {
+    display: flex;
+}
+#cabecalho #menu ul li {
+    list-style: none;
+}
+#cabecalho #menu ul li a{
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+    color: #ccc;
+    transition: all 0.5s linear;
+}
+#cabecalho #menu ul li a:hover{
+    background-color: var(--color-primary);
+}
+
+#cabecalho #menu li:hover .submenu {
+    display: block;
+}
+
+#cabecalho #menu li .submenu {
+    display: none;
+    position: absolute;
+    background-color: var(--color-secondary);
+}
+
+.conteudo {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.titulo-secao {
+    text-align: center;
+    font-size: 48px;
+    margin-bottom: 30px;
+}
+.but {
+    display: block;
+    background-color: var(--color-primary);
+    padding: 20px;
+    border-radius: 30px;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    font-size: 18px;
+    max-width: 300px;
+    margin: 0 auto;
+    transition: all 0.3s linear;
+}
+.but:hover {
+    box-shadow: 3px 3px 10px var(--color-primary);
+    background-color: rgb(4, 44, 85);
+}
+#apresentacao img {
+    margin-bottom: 50px;
+}
+
+#historia img {
+    float: left;
+    margin-right: 30px;
+    border-radius: 20px;
+}
+
+#historia p {
+    text-align: justify;
+    margin-bottom: 15px;
+}
+#modelos .container {
+    /*transforma container em grid*/
+    display: grid;
+    /*transforma em um grid de 4 colunas*/
+    grid-template-columns: repeat(4, 1fr);
+    /*aplica espaço entre as colunas*/
+    gap: 40px;
+}
+#modelos .container img {
+    height: 300px;
+    margin-bottom: 30px;
+}
+
+#modelos .container h3 {
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+#modelos .container ul {
+    margin-bottom: 30px;
+}
+
+#fotos .container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+}
+#fotos .container img {
+    width: 100%;
+    transition: all 0.2s linear;
+}
+
+#fotos .container img:hover{
+    transform: scale(75%);
+}
+
+#videos .container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+#rodape {
+    background-color: var(--color-secondary);
+    color: #fff;
+    text-align: center;
+    font-size: 12px;
+    padding: 50px;
+}
+#rodape a {
+    color: var(--color-primary);
+    text-decoration: none;
+    
+}
+#rodape a:hover{
+    text-decoration: underline;
+}
+
+/*o css será aplicado para telas de até 800px*/
+@media (max-width: 800px) {
+    #cabecalho .container{
+        display: block;
+    }
+
+    #cabecalho #logo {
+        display: block;
+        margin: 0 auto;
+        padding-top: 10px;
+    }
+    #cabecalho #menu ul{
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    #fotos .container{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px){
+    #fotos .container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
